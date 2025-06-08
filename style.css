@@ -1,0 +1,173 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Segoe UI', 'Malgun Gothic', sans-serif;
+}
+
+body {
+    background: linear-gradient(120deg, #84fab0 0%, #8fd3f4 100%);
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+}
+
+.container {
+    background: white;
+    padding: 2rem;
+    border-radius: 15px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+    width: 100%;
+    max-width: 500px;
+}
+
+h1 {
+    color: #2c3e50;
+    text-align: center;
+    margin-bottom: 2rem;
+    font-size: 2rem;
+}
+
+.todo-input-wrapper {
+    display: flex;
+    gap: 10px;
+    margin-bottom: 2rem;
+}
+
+#todoInput {
+    flex: 1;
+    padding: 12px;
+    border: 2px solid #e0e0e0;
+    border-radius: 8px;
+    font-size: 1rem;
+    transition: border-color 0.3s ease;
+}
+
+#todoInput:focus {
+    outline: none;
+    border-color: #84fab0;
+}
+
+#addTodo {
+    padding: 12px 24px;
+    background: #84fab0;
+    border: none;
+    border-radius: 8px;
+    color: white;
+    font-weight: bold;
+    cursor: pointer;
+    transition: background 0.3s ease;
+}
+
+#addTodo:hover {
+    background: #6dd89b;
+}
+
+.todo-list {
+    list-style: none;
+}
+
+.todo-item {
+    @apply flex items-center gap-4 bg-white p-4 rounded-lg shadow-sm border border-gray-100 transition-all hover:shadow-md;
+}
+
+.todo-item.completed {
+    @apply bg-gray-50;
+}
+
+.todo-item.completed .todo-text {
+    @apply line-through text-gray-500;
+}
+
+.todo-checkbox {
+    @apply w-5 h-5 rounded border-2 border-blue-300 checked:bg-blue-500 transition-colors;
+}
+
+.todo-text {
+    @apply flex-1 text-gray-700 text-lg font-gaegu;
+}
+
+.delete-btn {
+    @apply px-4 py-2 bg-red-500 text-white rounded-lg hover:bg-red-600 transition-colors font-gaegu;
+}
+
+.datetime-display {
+    text-align: center;
+    margin-bottom: 1.5rem;
+    padding-bottom: 1.5rem;
+    border-bottom: 2px solid #e0e0e0;
+}
+
+.time {
+    font-size: 2.5rem;
+    font-weight: bold;
+    color: #2c3e50;
+    margin-bottom: 0.5rem;
+}
+
+.date {
+    font-size: 1.2rem;
+    color: #666;
+}
+
+/* Calendar Customization */
+.flatpickr-calendar {
+    @apply shadow-lg border border-gray-200 font-gaegu;
+}
+
+.flatpickr-day {
+    @apply font-gaegu;
+}
+
+.flatpickr-day.selected {
+    @apply bg-blue-500 border-blue-500;
+}
+
+.flatpickr-day.today {
+    @apply border-blue-300;
+}
+
+/* Custom Scrollbar */
+::-webkit-scrollbar {
+    width: 8px;
+}
+
+::-webkit-scrollbar-track {
+    @apply bg-gray-100 rounded-full;
+}
+
+::-webkit-scrollbar-thumb {
+    @apply bg-blue-300 rounded-full hover:bg-blue-400 transition-colors;
+}
+
+/* Weather Icons */
+.wi {
+    line-height: 1.5;
+}
+
+/* Animation */
+@keyframes slideIn {
+    from {
+        transform: translateY(-10px);
+        opacity: 0;
+    }
+    to {
+        transform: translateY(0);
+        opacity: 1;
+    }
+}
+
+.todo-item {
+    animation: slideIn 0.3s ease;
+}
+
+/* Custom Fonts */
+.font-gaegu {
+    font-family: 'Gaegu', cursive;
+}
+
+.font-single-day {
+    font-family: 'Single Day', cursive;
+}
